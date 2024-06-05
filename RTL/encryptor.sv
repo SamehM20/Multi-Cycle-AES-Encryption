@@ -26,18 +26,18 @@ end
 
 always_ff @(posedge clk) begin
     if(!rst_n) begin    // Active Low Synchronous Reset
-        current_state = IDLE;
-        data_valid_o = 0;
-        data_o = 0;
-        crd_r = 1;
-        data_p = 0;
+        current_state <= IDLE;
+        data_valid_o <= 0;
+        data_o <= 0;
+        crd_r <= 1;
+        data_p <= 0;
     end
     else begin 
-        if(mode_i != NOOP) current_state = next_state;
-        data_p = data_rk;
-        data_valid_o = data_valid;
-        if(data_valid) data_o = data_rk;
-        crd_r = crd;
+        if(mode_i != NOOP) current_state <= next_state;
+        data_p <= data_rk;
+        data_valid_o <= data_valid;
+        if(data_valid) data_o <= data_rk;
+        crd_r <= crd;
     end
 end
 
