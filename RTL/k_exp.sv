@@ -26,26 +26,26 @@ end
 
 always_ff @(posedge clk) begin
     if(!rst_n) begin    // Active Low Synchronous Reset
-        current_state = PRE_ROUND;
-        crd_r = 1;
-        kw_int1 = 0;
-        kw_o = 0;
-        crd_rc_r = 1;
+        current_state <= PRE_ROUND;
+        crd_r <= 1;
+        kw_int1 <= 0;
+        kw_o <= 0;
+        crd_rc_r <= 1;
     end
     else begin 
-        kw_int1 = kw_int2;
+        kw_int1 <= kw_int2;
         // Output Register Multiplexing
         if((current_state == ROUND)||(current_state == PRE_ROUND)||(current_state == ROUND2_192))
-            kw_o = kw_int2[0:3];
+            kw_o <= kw_int2[0:3];
         else if((current_state == PRE_ROUND2_192)||(current_state == ROUND3_192))
-            kw_o = {kw_int2[4:5], kw_int2[0:1]};
+            kw_o <= {kw_int2[4:5], kw_int2[0:1]};
         else if((current_state == ROUND_192))
-            kw_o = kw_int2[2:5];
+            kw_o <= kw_int2[2:5];
         else
-            kw_o = kw_int2[4:7];
-        if(mode_i != NOOP) current_state = next_state;
-        crd_r = crd;
-        crd_rc_r = crd_rc;
+            kw_o <= kw_int2[4:7];
+        if(mode_i != NOOP) current_state <= next_state;
+        crd_r <= crd;
+        crd_rc_r <= crd_rc;
     end
 end
 
