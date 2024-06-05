@@ -3,7 +3,7 @@ Pipelined AES Encryption Implementation (128, 192 &amp; 256 bit Key Lengths) Usi
 
 
 #### Modes Included:
-- NOOP: Halts the Operation of the Module Perserving the State.
+- NOOP: Halts the Operation of the Module Preserving the State.
 - 128-bit key encryption.
 - 192-bit key encryption.
 - 256-bit key encryption.
