@@ -1,5 +1,5 @@
-# Pipelined-AES-Encryption
-Pipelined AES Encryption Implementation (128, 192 &amp; 256 bit Key Lengths) Using SystemVerilog
+# Multi-Cycle-AES-Encryption
+Multi-Cycle AES Encryption Implementation (128, 192 &amp; 256 bit Key Lengths) Using SystemVerilog
 
 
 #### Modes Included:
