@@ -13,7 +13,7 @@
 ||||||||||||||||||||||||||||||||||||||||||||
   LinkedIn: linkedin.com/in/sameh-elbatsh/
 ||||||||||||||||||||||||||||||||||||||||||||
-Pipelined AES Encryption Implementation
+Multi-Cycle AES Encryption Implementation
 Modes Included:
     - NOOP: Halts the Operation of the Module Perserving the State
     - 128-bit key encryption.
